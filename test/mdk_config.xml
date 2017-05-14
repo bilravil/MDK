@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><!-- MDK config file -->
+<config>
+<MDK>
+	<ID>16-00-001</ID>
+	<crbID>163401</crbID>	
+</MDK>
+
+
+<!-- database config -->
+<database>
+	<login>root</login>
+	<password>ravbec007</password>
+	<driver>org.sqlite.JDBC</driver>
+	<host>jdbc:sqlite:mdk_base.db</host>
+	<name>mdk_base</name>
+</database>
+
+<tisServer>
+    <login>admin</login>
+    <password>well866</password>
+    <auth>http://localhost:8084/Api/Db/Login</auth>
+    <getPatient>http://localhost:8084/Api/Db/Clinic4Patient/Get</getPatient>
+    <getDoctor>http://localhost:8084/Api/Db/Doctor4Clinic/Get</getDoctor>
+    <getClinic>http://localhost:8084/Api/Db/Clinic/Get</getClinic>
+    <getService>http://localhost:8084/Api/Db/ServiceCode/Get</getService>
+    <getMdkInfo>http://localhost:8084/Api/Db/Device/Get</getMdkInfo>
+    <putResult>http://localhost:8084/devices/tis/mdc/putTest</putResult>
+</tisServer>
+
+<!-- RabbitMQ connection to Server config -->
+<rabbitMQ>
+	<login>test</login>
+	<password>test</password>
+	<host>localhost</host>
+	<port>5672</port>
+	<virtualHost>/</virtualHost>
+	<exchange>myExchange</exchange>
+	<queue>MyQueue</queue>
+	<routingKey>testRoute</routingKey>	
+</rabbitMQ>
+
+<switch>
+        <serverType>1</serverType><!-- 0 - MDK Server; 1- TIS Server -->
+	<allPatFlag>false</allPatFlag><!-- request all patients from server -->
+	<addPatBut>true</addPatBut><!-- addition new patient -->
+        <typeOfUrino>1</typeOfUrino><!--type of urino device 0 - DocUReader2; 1- BC01 -->
+        <urinoName>BC010861</urinoName><!--if type == 1 define the name oа device-->
+</switch>
+
+
+<paths>
+	<pathToEcgApp>C:\\Program Files (x86)\\ATES Medica\\Easy ECG Rest\\Bin\\ht_ecgv11.exe</pathToEcgApp>	
+</paths>
+
+<printer>
+	<name>Samsung ML-1640 Series (USB001)</name> <!-- MPRINT LP58 Label EVA -->
+</printer>
+
+<GUI>
+	<fontScale>100</fontScale>
+</GUI>
+</config>
