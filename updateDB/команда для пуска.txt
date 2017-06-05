@@ -1,0 +1,1 @@
+java -jar "C:\\updateDB\\updateDb.jar" patient
